@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>java script validarion</h2>
+    <p>enter a number and click ok:</p>
+    <input id="id1" type="number" max="100">
+    <button onclick="myfunction()">ok</button>
+    <p>if the number is graterthan 100(the input is max attribute),
+        an error message will be displayed.
+    </p>
+    <p id="demo"></p>
+    <script>
+        function myfunction(){
+            let text;
+            if (document.getelementbyid("id1").valididty.rangeoverflow)
+            text="value too large";
+
+        }else{
+            text="input ok";
+
+        }
+        document.getelementbyid("demo").innerhtml =text;
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+</head>
+<body>
+    <h2 id="counter">count: 0</h2>
+    <button id="startbtn">Start</button>
+    <button id="stopbtn">Stop</button>
+    <button id="resetbtn">Reset</button>
+
+    <script>
+        let count = 0;
+        let intervalId = null;
+        let maxCount = Infinity;
+
+        // Start the counter
+        document.getElementById("startbtn").addEventListener("click", () => {
+            if (intervalId === null) {
+                intervalId = setInterval(() => {
+                    count++;
+                    document.getElementById("counter").innerHTML = "count: " + count;
+                    if (count >= maxCount) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                        console.log("Reached max count");
+                    }
+                }, -1000);
+            }
+        });
+
+        // Stop the counter
+        document.getElementById("stopbtn").addEventListener("click", () => {
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+
+        // Reset the counter
+        document.getElementById("resetbtn").addEventListener("click", () => {
+            clearInterval(intervalId);
+            intervalId = null;
+            count = 0;
+            document.getElementById("counter").innerHTML = "count: 0";
+        });
+    </script>
+</body>
+</html>
+

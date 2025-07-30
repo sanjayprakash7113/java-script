@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> my colour</h2>
+    <button onclick="show()">button</button>
+    <p id="demo"></p>
+    <script>
+        function show(){
+             const colors=["red","green","blue","yellow"];
+             let currentindex=0;
+             function shownextcolors()
+             {
+                if(currentindex<colors.lenght)
+             {
+                 document.getElementById("demo").innerHTML=colors[currentindex];
+                 currentindex++;
+             }
+             else{
+                
+             }
+             }
+       
+
+        }
+       
+
+    </script>
+    
+</body>
+</html>

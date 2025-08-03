@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let item={
+            name:"mobile", // , its importand in one key value pair was done you give , in the value
+            price:40000,
+
+        }
+        console.log(item);
+
+        // another way to create a object
+        let item2 =new Object();
+        item2.name="gun",
+        item2.price=7000,
+        console.log(item2.price);
+        // change the the value(7000) in the property(name,price) amd item is a object
+        item2.price=7930;
+        console.log(item2.price);
+
+        item.quantity=2
+        console.log(item);// if you need any thing add your item just use this and add that
+         console.log(item['name']); // if you need any specific value use this one
+
+        item['name']= 'victor' // if you need change you use this method for change already created value or string
+         console.log(item);
+         item.name="prakash"
+         console.log(item);
+         
+         let key ="name"
+         item[key]=604
+         console.log(item); // change based in any perticular element based in variable 
+
+
+
+// one array  in another one array
+           let item7={
+            name:"mobile",
+            price:40000,
+
+            categories:['electical','mechanical'], // array in object.
+            dimensions:{  // another object in one object
+                length:5,
+                height:90,
+                name:'sanjay'
+            }
+
+        }
+        console.log(item7);
+       
+        console.log(item7.categories[0]); // if you want call specfic element elemnt in array iside the object you use this comment
+        console.log(item7.dimensions.length); // if you have two object in one object inside you use two object name like this call second object name .
+
+        item ={
+            name:"prathap",
+            price:44,
+        
+        
+        buy:function(){       // this is a function inside  the object 
+            console.log("item");
+
+          }
+          
+        }
+        item.buy() // if you need call the function use this method why we use () becase it was a function so you () called function inside the object 
+        
+
+
+    </script>
+</body>
+</html>

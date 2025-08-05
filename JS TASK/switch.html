@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="text-align: center;">city</h2>
+    <div class="input"></div>
+    <select name="city" id="input">
+        <option value="bengaluru">bangaluru</option>
+        <option value="chennai">chennai</option>
+        <option value="delhi">delhi</option>
+    </select>
+    <button type="submit">show preview</button>
+    <div id="output"></div>
+    <script>
+        const button= document.querySelector("button");
+        // evennt lissioner
+        button.addEventListener("click",displaystats)
+        function displaystats(){
+            const input=document.getElementById("input");
+            const city = input.value;
+           
+            switch (city){
+                case 'bengaluru':
+                    population =60000000;
+                    literacyrate=70;
+                    language='kannada';
+                    break
+            
+            case 'chennai':
+                    population =60000000;
+                    literacyrate=90;
+                    language='tamil';
+                    break
+                    case 'delhi':
+                    population =60000000;
+                    literacyrate=80;
+                    language='hindi';
+                    break
+
+
+            }
+        
+            let text = `the indian city of ${city} has a population of ${population} language spok and literacy rate is ${literacyrate} %`;
+            console.log(text);
+            document.getElementById("output").innerHTML=text
+          
+        
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="text-align:center;" >FD rate calculator</h2>
+    <div class="input"></div>
+    <input type="text" id="input">
+    <button type="submit" onclick="fdrate()">fd rate calculate</button>
+    <div id="result"></div>
+    <script>
+        function fdrate (){
+            const mon=Number(document.getElementById("input").value);
+            let rate;
+           
+     
+     if(mon<3)
+     {
+        rate=5.8
+     }
+     else if(mon>=3 && mon<6)
+     {
+        rate=6.5
+     } 
+     else if(mon>=5 && mon<9)
+     {
+        rate=9
+     }
+     else{
+        rate=10
+     }
+     let result=document.getElementById("result");
+     result.innerHTML="your intrest is "+ rate+ "%"
+     
+     console.log("your intrest is "+ rate+ "%");
+   }
+     
+ 
+
+    </script>
+    </body>
+</html>

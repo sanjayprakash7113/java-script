@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set object- collection of values and print unique values do not print a same value
+        let arr=[1,2,3,4,5,6,32,5,2,1,5,3]
+        let set1= new Set(arr);
+        console.log(arr);
+      console.log(set1); // cannot repet the same values 
+
+// this is one of the wy add the set
+      let set2= new Set()
+      set2.add(3)
+      set2.add(4) 
+      set2.add(3)
+      set2.add(32)
+      set2.add(3)
+      set2.add({"sanjay":1})
+      console.log(set2) 
+      
+    let obj1=({"sanjay":1})
+    set2.add(obj1)
+    let obj2=obj1
+    set2.add(obj2)
+    console.log(obj1);
+    console.log(set2); //obj do not print teo times because it was a reference type only variable change(obj1 and obj2) not address
+    console.log(set2.size); // find total elements 
+    console.log(set2.has(3)); // has use for we want check any perticular value in the variable if it's that value available in our variable or set it's show true are not it's false
+    console.log(set2.delete(32)); //use for delete perticular value
+    console.log(set2);
+    let arr2= Array.from(set2) // change sert to array   
+    console.log(arr2);  
+
+
+    // map object of collection of key values pairs.
+    //a key in the map may only occur once key or value can be object
+
+    let map1=new Map()
+    map1.set("a",1)
+    map1.set("b",2)
+    map1.set("c",3)
+    console.log(map1);
+    console.log(map1.size); // find the number of value
+    console.log(map1.delete("c"));
+    console.log(map1);
+    for(let i of map1){
+        console.log(i);  // give the values  like a array
+    } 
+
+    for(let[k]of map1){
+        console.log(k)   // k means key 
+    }
+    for (let[v]of map1){
+        console.log(v);  // v means value
+        // 2d array to  convert map 
+        let z=[['a',1],['b',2]]
+        let map2= new Map(z)
+        console.log(map2);
+    }
+
+                            
+    </script> 
+</body>
+</html>

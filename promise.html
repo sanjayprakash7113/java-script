@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise object represent the eventual completion(or failure) of an asyncronous operation()
+        const booking=  new Promise((resolve,reject)=>{
+            let bookingsucess= true // we use promise resolve and reject true means resolve and false meanse reject
+
+            if(bookingsucess)
+            resolve()
+        else
+        reject()
+        }) // we only define the promise  hear not use
+        booking.then(success) // use the promise hear then was define the resolve true means it will be run 
+        .catch(failure) //catch was define the reject false means it will be run
+
+        function success(){
+            console.log("thank");
+        }
+        function failure(){
+            console.log("sorry");
+        }
+
+        const a= new Promise((resolve,reject)=>{
+            let a=true
+            if(a)
+            resolve(434)
+        else
+        reject()
+        })
+        a.then((amt)=>console.log(`sanjay ${amt}`))
+        .catch(()=>console.log(`victor`))
+
+    </script>
+</body>
+</html>

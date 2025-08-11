@@ -26,6 +26,11 @@
             console.log("sorry");
         }
 
+
+
+
+
+
         const a= new Promise((resolve,reject)=>{
             let a=true
             if(a)
@@ -35,6 +40,123 @@
         })
         a.then((amt)=>console.log(`sanjay ${amt}`))
         .catch(()=>console.log(`victor`))
+
+
+
+
+
+
+
+        // if we want we give the promise inside the function too
+        function tatkalbook(){
+
+       return new Promise((resolve,reject)=>{
+            let bookingsucess= false
+
+            if(bookingsucess)
+            resolve()
+        else
+        reject()
+        }) }
+        let book = tatkalbook();
+
+
+        book.then(success)
+        .catch(failure) 
+
+        function success(){
+            console.log("thank");
+        }
+        function failure(){
+            console.log("sorry");}
+
+
+
+
+            function toss(){
+             return new Promise((resolve,reject)=>{
+                //0-head(success) 1-tail(failure)
+                const rand=Math.floor(Math.random()*2)
+                if (rand==0)
+                resolve()
+            else
+            reject()
+
+             })
+            }
+            let coin=toss();
+           coin.then(()=>console.log("won"))
+            .catch(()=>console.log("loss"));
+
+
+
+
+
+
+            let reacha= new Promise((resolve,reject)=>{
+                const reached= true
+                if(reached)
+                setTimeout(resolve,3000,"victor reached ")
+            else
+            reject("victor not reached")
+
+            })
+                 let reachb= new Promise((resolve,reject)=>{
+                const reached= true
+                if(reached)
+                setTimeout(resolve,2000,"robert reached ")
+            else
+            reject("robert not reached")
+
+            })
+
+                 let reachc= new Promise((resolve,reject)=>{
+                const reached= true
+                if(reached)
+                setTimeout(resolve,4000,"arun reached ")
+            else
+            reject("arun not reached")
+
+            })
+            Promise.all([reacha,reachb,reachc])
+            .then((message)=>console.log(message))
+            .catch((message)=>console.log(message));
+            // suspose some one false result do not give the proper answer it was  show only negative or false output do not show true valu  
+
+          let reachd= new Promise((resolve,reject)=>{
+                const reached= true
+                if(reached)
+                setTimeout(resolve,3000,"victor reached ")
+            else
+            reject("victor not reached")
+
+            })
+                 let reache= new Promise((resolve,reject)=>{
+                const reached= true
+                if(reached)
+                setTimeout(resolve,2000,"robert reached ")
+            else
+            reject("robert not reached")
+
+            })
+
+                 let reachf= new Promise((resolve,reject)=>{
+                const reached= false
+                if(reached)
+                setTimeout(resolve,4000,"arun reached ")
+            else
+            reject("arun not reached")
+
+            })
+            Promise.allSettled([reacha,reachb,reachc])
+            .then((message)=>console.log(message))
+            .catch((message)=>console.log(message));
+            // settled use for give all in one array if true and false both are show in output
+            
+
+            //promise.any()- it was give a give output any one true (one type try replace allsettled)
+            //promise.race()-nit was a print only which one was run first not consider true or false . just print based on the first runnig one
+
 
     </script>
 </body>

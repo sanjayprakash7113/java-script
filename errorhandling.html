@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //expectation handling 
+        try{
+                num=prompt("enter a number") //we use prompt get user input
+
+                if(num=="") //it was empty space we say throw what was print
+                throw "enter the number" 
+            if(isNAN(num))  // we say input was nan call throw
+            throw "enter the vaild number"
+        console.log(num**2); //input was nuumber we say **2 that num
+        }
+        catch(error){
+            console.log(error); // catch use for catch the throw and analysis which type throw and print the operation
+        }
+        finally{
+            console.log(thankyou); //finally use for we muut do some operation suspose the before proses was error or not but it was run 
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //async always return a promise
+        async function fn(){
+            return "hello" // automatically considerit is a resolve so not neeed then
+        }
+        console.log(fn()); // we do not need the then because async was actomatical give promise
+        fn().then((msg)=>console.log(msg));
+
+
+
+         let reacha= new Promise((resolve,reject)=>{
+                const reached= true
+                if(reached)
+                setTimeout(resolve,2000,"robert reached ")
+            else
+            reject("robert not reached")
+         })
+
+
+         let reache= new Promise((resolve,reject)=>{
+                const reached= false
+                if(reached)
+                setTimeout(resolve,r000,"robert reached ")
+            else
+            reject("robert not reached")
+         })
+
+//note this is only for true function 
+         async function status(){
+            console.log("hi");
+            res=await reacha // await was only use for we we told function wit until the functionwas fully run
+            console.log(res);//after await run complitly the function this functon will be run 
+            
+         }
+
+         status() // use for call the function
+
+         //how can handle false function we use the (try) and (catch) 
+async function myasync(){
+         try{ // try use for negative operation like a false statement
+            result =await reache
+             console.log(result);
+            
+
+         }
+         catch(err){
+            console.log(err);
+         }
+}
+myasync()
+    </script>
+</body>
+</html>

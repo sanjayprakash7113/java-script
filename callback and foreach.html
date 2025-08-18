@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        function greet(name){
+            const heading=document.querySelector("h1") // queryselector used for selsect ther query like p,h etc 
+            heading.innerText=name+"victor" // we tolt the program when exactly guve the value headind innertext
+        }
+        greet()
+
+        function get(callback){    // callback is just a variable it is used for store the values or 
+            callback("hi")         // function temproryly aftdr use it in when we are call the function
+            
+        }
+        get(greet)
+
+        //foreach
+        arr=['cat','dog','goat']
+        arr.forEach(print)
+        function print(val){
+            console.log(val);
+        }
+        arr.forEach(val => console.log(val.toUpperCase()))
+        arr.forEach((val,index,arr)=>{
+            arr[index]=val.toUpperCase()
+        })
+        console.log(arr);
+
+    </script>
+</body>
+</html>

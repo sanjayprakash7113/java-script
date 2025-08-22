@@ -1,0 +1,124 @@
+<!DOCTYPE html> <!-- Tells the browser this is an HTML5 document -->
+<html lang="en"> <!-- Page language is English -->
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive scaling on mobile -->
+  <title>Responsive Navbar</title> <!-- Browser tab title -->
+
+  <style>
+    /* ====== Base styles ====== */
+    body {                         /* Styles for the whole page */
+      margin: 0;                   /* Remove default outer spacing */
+      padding: 0;                  /* Remove default inner spacing */
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Font stack */
+    }
+
+    nav {                          /* The top navigation bar container */
+      background-color: greenyellow; /* Nav background color */
+      font-size: 25px;             /* Base font-size inside nav (can be overridden) */
+      width: 100%;                 /* Make nav full width */
+      display: flex;               /* Use flexbox layout */
+      align-items: center;         /* Vertically center items in the nav */
+      justify-content: space-around; /* Spread items with equal space around */
+      position: relative;          /* Create a positioning context for the hamburger */
+    }
+
+    nav ul {                       /* The list that holds menu links */
+      list-style: none;            /* Remove bullets from list */
+      margin: 0;                   /* Remove default margin */
+      padding: 0;                  /* We'll control padding ourselves */
+    }
+
+    nav li {                       /* Each menu item */
+      display: inline-block;       /* Put items side-by-side (desktop) */
+      margin: 0 9px;               /* Horizontal spacing between items */
+    }
+
+    nav a {                        /* All links inside nav */
+      font-size: 36px;             /* Make links big/bold (overrides nav's 25px) */
+      font-weight: bolder;         /* Extra bold text */
+      text-decoration: none;       /* (Optional) remove underline */
+      color: inherit;              /* Inherit color from parent (keeps it consistent) */
+    }
+
+    nav a:hover {                  /* When hovering over a link */
+      color: aqua;                 /* Change link color on hover */
+    }
+
+    .menu-line {                   /* One bar of the hamburger icon */
+      height: 3px;                 /* Thickness of the line */
+      width: 20px;                 /* Length of the line */
+      background-color: red;       /* Line color */
+      margin-bottom: 3px;          /* Space between lines */
+    }
+
+    .menu {                        /* The hamburger wrapper */
+      cursor: pointer;             /* Show hand cursor on hover */
+      display: none;               /* Hidden on desktop by default */
+    }
+
+    /* ====== Mobile styles (<= 640px) ====== */
+    @media all and (max-width: 640px) {
+      nav {                        /* On small screens */
+        flex-direction: column;    /* Stack items vertically */
+      }
+
+      nav li {                     /* Menu items on mobile */
+        display: block;            /* Stack each item on its own line */
+        padding: 10px 0;           /* Add vertical space around each item */
+      }
+
+      nav ul {                     /* The menu list on mobile */
+        text-align: center;        /* Center the menu items */
+        padding: 0;                /* No extra padding */
+        display: none;             /* Hidden by default; JS will show it */
+      }
+
+      .showmenu {                  /* Class toggled by JS when hamburger is clicked */
+        display: block;            /* Show the menu list */
+      }
+
+      .logo {                      /* The logo area on mobile */
+        align-self: flex-start;    /* Stick logo to the left */
+        margin: 10px 0 30px;       /* Space around the logo */
+      }
+
+      .menu {                      /* Show hamburger on mobile */
+        display: block;            /* Make it visible */
+        position: absolute;        /* Position relative to nav */
+        right: 20px;               /* Push to the right edge */
+        top: 25px;                 /* Down a bit from the top */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav> <!-- Start of the navigation bar -->
+    <div class="logo"> <!-- Container for brand/logo -->
+      <a href="#">list</a> <!-- Logo link (currently points to top of page) -->
+    </div>
+
+    <ul> <!-- Menu list -->
+      <li><a href="#">home</a></li>    <!-- Menu item: Home -->
+      <li><a href="#">about</a></li>   <!-- Menu item: About -->
+      <li><a href="#">contact</a></li> <!-- Menu item: Contact -->
+    </ul>
+
+    <div class="menu"> <!-- Hamburger button (mobile only) -->
+      <div class="menu-line"></div> <!-- Line 1 -->
+      <div class="menu-line"></div> <!-- Line 2 -->
+      <div class="menu-line"></div> <!-- Line 3 -->
+    </div>
+  </nav>
+
+  <script>
+    const menu = document.querySelector('.menu');     // Grab the hamburger button
+    const menulist = document.querySelector('nav ul'); // Grab the <ul> menu list
+
+    menu.addEventListener('click', () => {            // When hamburger is clicked
+      menulist.classList.toggle('showmenu');          // Toggle .showmenu (Capital "L" in classList!)
+    });
+  </script>
+</body>
+</html>
